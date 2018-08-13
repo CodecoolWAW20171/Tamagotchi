@@ -13,8 +13,8 @@ import java.io.IOException;
 
 public class MainMenuController {
 
-    public static final double MENU_WIDTH = 1000;
-    public static final double MENU_HEIGHT = 700;
+    public static final double MENU_WIDTH = 1200;
+    public static final double MENU_HEIGHT = 800;
     public static final String MenuFXML = "../view/MainMenu.fxml";
     public static final String filename = "../../../../../resources/saveFile.txt";
     private Stage primaryStage;
@@ -33,6 +33,8 @@ public class MainMenuController {
     public MainMenuController(Stage primaryStage) {
         this.primaryStage = primaryStage;
     }
+
+    public MainMenuController() {}
 
     public void initMainMenu() {
         try {
@@ -59,5 +61,9 @@ public class MainMenuController {
     @FXML
     private void continueSavedGame() {
         gameController.loadGame(filename);
+    }
+
+    @FXML
+    private void initialize() {
     }
 }
