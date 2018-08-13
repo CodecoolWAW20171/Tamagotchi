@@ -16,7 +16,7 @@ public class MainMenuController {
     public static final double MENU_WIDTH = 1200;
     public static final double MENU_HEIGHT = 800;
     public static final String MenuFXML = "../view/MainMenu.fxml";
-    public static final String filename = "../../../../../resources/saveFile.txt";
+    public static final String FILENAME = "@/saveFile.txt";
     private Stage primaryStage;
 
     @FXML
@@ -60,7 +60,7 @@ public class MainMenuController {
 
     @FXML
     private void continueSavedGame() {
-        gameController.loadGame(filename);
+        gameController.loadGame(FILENAME);
     }
 
     @FXML

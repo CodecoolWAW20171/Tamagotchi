@@ -1,3 +1,7 @@
-.anchor {
-    -fx-background-image:url('file:/C:/Users/Documents/page_background.gif');
+.root {
+    -fx-background-image: url(/tamagotchiMainMenu.jpg);
+    -fx-background-repeat: stretch;
+    -fx-background-size: cover, auto;
+    -fx-background-position: center center;
 }
+
