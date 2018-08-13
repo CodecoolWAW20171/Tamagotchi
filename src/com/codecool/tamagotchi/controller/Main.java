@@ -5,7 +5,7 @@ import javafx.stage.Stage;
 
 public class Main extends Application {
 
-    private static final String TITLE = "Wild snakes";
+    private static final String TITLE = "Tamagotchi";
 
     public static void main(String[] args) {
         launch(args);
@@ -13,9 +13,9 @@ public class Main extends Application {
 
     @Override
     public void start(Stage primaryStage) {
-        MainMenuController mainController = new MainMenuController(primaryStage);
+        MainMenuController mainMenuController = new MainMenuController(primaryStage);
         primaryStage.setTitle(TITLE);
-        mainController.showMainMenu();
+        mainMenuController.initMainMenu();
         primaryStage.show();
     }
 }
