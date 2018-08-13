@@ -27,14 +27,14 @@ public class Tamagotchi {
             this.Fun += 20;
         }
         else {
-            this.Fun = 100
+            this.Fun = 100;
         }
     }
 
     public void getOlder() {
         this.Age += 1;
     }
-    
+
     public int getFeeding(){
         return this.Feeding;
     }
