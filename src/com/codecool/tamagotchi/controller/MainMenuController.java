@@ -13,8 +13,8 @@ import java.io.IOException;
 
 public class MainMenuController {
 
-    public static final double MENU_WIDTH = 1200;
-    public static final double MENU_HEIGHT = 800;
+    public static final double WINDOW_WIDTH = 1200;
+    public static final double WINDOW_HEIGHT = 800;
     public static final String MenuFXML = "../view/MainMenu.fxml";
     public static final String FILENAME = "@/saveFile.txt";
     private Stage primaryStage;
@@ -44,7 +44,7 @@ public class MainMenuController {
             FXMLLoader mainMenuLoader = new FXMLLoader(getClass().getResource(this.MenuFXML));
             Parent root = (AnchorPane) mainMenuLoader.load();
 
-            primaryStage.setScene(new Scene(root, MainMenuController.MENU_WIDTH, MainMenuController.MENU_HEIGHT));
+            primaryStage.setScene(new Scene(root, MainMenuController.WINDOW_WIDTH, MainMenuController.WINDOW_HEIGHT));
             primaryStage.show();
 
         } catch (IOException e) {
@@ -65,7 +65,4 @@ public class MainMenuController {
         gameController.loadGame(FILENAME);
     }
 
-    @FXML
-    private void initialize() {
-    }
 }
