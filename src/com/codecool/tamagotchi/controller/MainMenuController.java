@@ -39,13 +39,13 @@ public class MainMenuController {
 
     public void initMainMenu() {
         try {
-            primaryStage.hide();
+            this.primaryStage.hide();
 
             FXMLLoader mainMenuLoader = new FXMLLoader(getClass().getResource(this.MenuFXML));
             Parent root = (AnchorPane) mainMenuLoader.load();
 
-            primaryStage.setScene(new Scene(root, MainMenuController.WINDOW_WIDTH, MainMenuController.WINDOW_HEIGHT));
-            primaryStage.show();
+            this.primaryStage.setScene(new Scene(root, MainMenuController.WINDOW_WIDTH, MainMenuController.WINDOW_HEIGHT));
+            this.primaryStage.show();
 
         } catch (IOException e) {
             e.printStackTrace();
@@ -56,7 +56,7 @@ public class MainMenuController {
 
     @FXML
     private void startNewGame() {
-        GameController gameController = new GameController();
+        GameController gameController = new GameController(this.primaryStage);
         gameController.initializeGame();
     }
 
