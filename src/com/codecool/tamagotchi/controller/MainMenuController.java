@@ -1,5 +1,6 @@
 package com.codecool.tamagotchi.controller;
 
+import com.codecool.tamagotchi.model.Tamagotchi;
 import javafx.application.Platform;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -56,7 +57,8 @@ public class MainMenuController {
 
     @FXML
     private void startNewGame() {
-        GameController gameController = new GameController(this.primaryStage);
+        Tamagotchi tamagotchi = new Tamagotchi();
+        GameController gameController = new GameController(this.primaryStage, tamagotchi);
         gameController.initializeGame();
     }
 

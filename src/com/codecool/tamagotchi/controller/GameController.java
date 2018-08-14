@@ -1,11 +1,14 @@
 package com.codecool.tamagotchi.controller;
 
 import com.codecool.tamagotchi.model.Tamagotchi;
+import javafx.application.Platform;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
+
+import java.io.IOException;
 
 public class GameController {
 
@@ -22,13 +25,18 @@ public class GameController {
     }
 
     public void initializeGame() {
-        this.primaryStage.hide();
+        try {
+            this.primaryStage.hide();
 
-        FXMLLoader GameLoader = new FXMLLoader(getClass().getResource(this.GameFXML));
-        Parent root = GameLoader.load();
+            FXMLLoader GameLoader = new FXMLLoader(getClass().getResource(this.GameFXML));
+            Parent root = GameLoader.load();
 
-        this.primaryStage.setScene(new Scene(root, MainMenuController.WINDOW_WIDTH, MainMenuController.WINDOW_HEIGHT));
-        this.primaryStage.show();
+            this.primaryStage.setScene(new Scene(root, MainMenuController.WINDOW_WIDTH, MainMenuController.WINDOW_HEIGHT));
+            this.primaryStage.show();
+        } catch (IOException e) {
+            e.printStackTrace();
+            Platform.exit();
+        }
     }
 
     public void loadGame(String filename) {
