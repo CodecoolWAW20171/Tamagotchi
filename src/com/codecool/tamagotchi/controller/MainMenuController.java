@@ -34,7 +34,8 @@ public class MainMenuController {
         this.primaryStage = primaryStage;
     }
 
-    public MainMenuController() {}
+    public MainMenuController() {
+    }
 
     public void initMainMenu() {
         try {
@@ -55,6 +56,7 @@ public class MainMenuController {
 
     @FXML
     private void startNewGame() {
+        GameController gameController = new GameController();
         gameController.initializeGame();
     }
 

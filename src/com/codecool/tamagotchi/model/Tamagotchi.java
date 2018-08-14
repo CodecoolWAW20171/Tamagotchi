@@ -5,12 +5,13 @@ public class Tamagotchi {
     private int Fun;
     private int Age;
 
-    public Tamagotchi () {
+    public Tamagotchi() {
         Feeding = 100;
         Fun = 100;
         Age = 0;
     }
-    public Tamagotchi (String filename) {
+
+    public Tamagotchi(String filename) {
 
     }
 
@@ -25,8 +26,7 @@ public class Tamagotchi {
     public void haveFun() {
         if (this.Fun < 80) {
             this.Fun += 20;
-        }
-        else {
+        } else {
             this.Fun = 100;
         }
     }
@@ -35,11 +35,11 @@ public class Tamagotchi {
         this.Age += 1;
     }
 
-    public int getFeeding(){
+    public int getFeeding() {
         return this.Feeding;
     }
 
-    public int getFun(){
+    public int getFun() {
         return this.Fun;
     }
 

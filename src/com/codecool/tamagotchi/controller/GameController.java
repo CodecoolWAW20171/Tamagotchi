@@ -6,10 +6,14 @@ public class GameController {
 
     Tamagotchi tamagotchi;
 
+    public GameController() {
+    }
+
     public void initializeGame() {
 
     }
-    public void loadGame (String filename) {
+
+    public void loadGame(String filename) {
 
     }
 }
