@@ -3,7 +3,7 @@
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.layout.AnchorPane?>
 
-    <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1280.0" stylesheets="@/css/mainMenu.css" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.codecool.tamagotchi.controller.MainMenuController">
+    <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1280.0" stylesheets="@/css/mainMenu.css" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" >
    <children>
       <Button fx:id="newButton" layoutX="640.0" layoutY="400.0" mnemonicParsing="false" onAction="#startNewGame" text="New Game" />
       <Button fx:id="loadButton" alignment="CENTER_RIGHT" layoutX="617.0" layoutY="450.0" mnemonicParsing="false" onAction="#continueSavedGame" prefHeight="26.0" prefWidth="134.0" text="Load saved game" />

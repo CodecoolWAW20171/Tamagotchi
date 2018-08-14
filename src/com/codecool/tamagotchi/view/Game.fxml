@@ -11,10 +11,9 @@
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.VBox?>
 
-
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.codecool.tamagotchi.controller.GameController">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="480.0" prefWidth="640.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1">
    <center>
-      <ImageView fitHeight="458.0" fitWidth="612.0" pickOnBounds="true" preserveRatio="true" BorderPane.alignment="CENTER">
+      <ImageView id="tamagotchiPicture" fitHeight="340.0" fitWidth="333.0" pickOnBounds="true" preserveRatio="true" BorderPane.alignment="CENTER">
          <image>
             <Image url="@../../../../../resources/tamagotchi.png" />
          </image>
@@ -23,15 +22,15 @@
    <bottom>
       <ToolBar prefHeight="40.0" prefWidth="200.0" BorderPane.alignment="CENTER">
         <items>
-          <Button mnemonicParsing="false" prefHeight="26.0" prefWidth="673.0" text="Feed" />
-            <Button mnemonicParsing="false" prefHeight="26.0" prefWidth="589.0" text="Play with Tamagotchi" />
+          <Button mnemonicParsing="false" prefHeight="26.0" prefWidth="81.0" text="Feed" />
+            <Button mnemonicParsing="false" prefHeight="26.0" prefWidth="173.0" text="Play with Tamagotchi" />
         </items>
       </ToolBar>
    </bottom>
    <right>
-      <VBox prefHeight="760.0" prefWidth="245.0" BorderPane.alignment="CENTER">
+      <VBox prefHeight="393.0" prefWidth="167.0" BorderPane.alignment="CENTER">
          <children>
-            <Label alignment="CENTER" prefHeight="22.0" prefWidth="170.0" text="Feeding">
+            <Label alignment="CENTER" prefHeight="22.0" prefWidth="170.0" text="Feeding" BorderPane.alignment="CENTER_LEFT">
                <VBox.margin>
                   <Insets left="40.0" top="20.0" />
                </VBox.margin>
@@ -55,12 +54,15 @@
                <VBox.margin>
                   <Insets left="40.0" top="20.0" />
                </VBox.margin>
+               <BorderPane.margin>
+                  <Insets />
+               </BorderPane.margin>
             </Label>
-            <TextField id="ageField" alignment="CENTER" />
+            <TextField id="ageField" alignment="CENTER" editable="false" prefHeight="26.0" prefWidth="36.0" />
          </children>
       </VBox>
    </right>
    <top>
-      <TextField id="tamagotchiMessageField" alignment="CENTER" prefHeight="37.0" prefWidth="1280.0" BorderPane.alignment="CENTER" />
+      <TextField id="tamagotchiMessageField" alignment="CENTER" editable="false" prefHeight="37.0" prefWidth="1280.0" BorderPane.alignment="CENTER" />
    </top>
 </BorderPane>
