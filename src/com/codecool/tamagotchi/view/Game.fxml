@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ProgressBar?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToolBar?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.VBox?>
+
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.codecool.tamagotchi.controller.GameController">
+   <center>
+      <ImageView fitHeight="458.0" fitWidth="612.0" pickOnBounds="true" preserveRatio="true" BorderPane.alignment="CENTER">
+         <image>
+            <Image url="@../../../../../resources/tamagotchi.png" />
+         </image>
+      </ImageView>
+   </center>
+   <bottom>
+      <ToolBar prefHeight="40.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+        <items>
+          <Button mnemonicParsing="false" prefHeight="26.0" prefWidth="673.0" text="Feed" />
+            <Button mnemonicParsing="false" prefHeight="26.0" prefWidth="589.0" text="Play with Tamagotchi" />
+        </items>
+      </ToolBar>
+   </bottom>
+   <right>
+      <VBox prefHeight="760.0" prefWidth="245.0" BorderPane.alignment="CENTER">
+         <children>
+            <Label alignment="CENTER" prefHeight="22.0" prefWidth="170.0" text="Feeding">
+               <VBox.margin>
+                  <Insets left="40.0" top="20.0" />
+               </VBox.margin>
+            </Label>
+            <ProgressBar id="feedingBar" prefHeight="20.0" prefWidth="220.0" progress="0.0">
+               <VBox.margin>
+                  <Insets left="10.0" />
+               </VBox.margin>
+            </ProgressBar>
+            <Label alignment="CENTER" prefHeight="28.0" prefWidth="164.0" text="Fun">
+               <VBox.margin>
+                  <Insets left="40.0" top="20.0" />
+               </VBox.margin>
+            </Label>
+            <ProgressBar id="funBar" prefHeight="20.0" prefWidth="220.0" progress="0.0">
+               <VBox.margin>
+                  <Insets left="10.0" />
+               </VBox.margin>
+            </ProgressBar>
+         </children>
+      </VBox>
+   </right>
+   <top>
+      <TextField id="textField" alignment="CENTER" prefHeight="37.0" prefWidth="1280.0" BorderPane.alignment="CENTER" />
+   </top>
+</BorderPane>

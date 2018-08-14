@@ -42,7 +42,7 @@ public class MainMenuController {
             this.primaryStage.hide();
 
             FXMLLoader mainMenuLoader = new FXMLLoader(getClass().getResource(this.MenuFXML));
-            Parent root = (AnchorPane) mainMenuLoader.load();
+            Parent root = mainMenuLoader.load();
 
             this.primaryStage.setScene(new Scene(root, MainMenuController.WINDOW_WIDTH, MainMenuController.WINDOW_HEIGHT));
             this.primaryStage.show();
