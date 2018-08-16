@@ -59,7 +59,7 @@
                   <Insets />
                </BorderPane.margin>
             </Label>
-            <TextField id="ageField" fx:id="ageProperty" alignment="CENTER" editable="false" prefHeight="26.0" prefWidth="36.0" />
+            <TextField id="ageField" fx:id="ageField" alignment="CENTER" editable="false" prefHeight="26.0" prefWidth="36.0" />
          </children>
       </VBox>
    </right>
