@@ -3,20 +3,13 @@ package com.codecool.tamagotchi.controller;
 import com.codecool.tamagotchi.model.Tamagotchi;
 import com.codecool.tamagotchi.view.View;
 import javafx.application.Platform;
-import javafx.beans.property.Property;
-import javafx.beans.property.ReadOnlyObjectWrapper;
-import javafx.beans.property.SimpleIntegerProperty;
-import javafx.beans.value.ObservableValue;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.ProgressBar;
 import javafx.scene.image.ImageView;
-import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 
-import java.awt.*;
 import java.io.IOException;
 
 public class GameController {
