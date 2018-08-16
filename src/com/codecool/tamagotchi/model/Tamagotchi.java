@@ -1,4 +1,5 @@
 package com.codecool.tamagotchi.model;
+import javafx.collections.FXCollections;
 
 public class Tamagotchi {
     private int Feeding;

@@ -36,7 +36,7 @@
                   <Insets left="40.0" top="20.0" />
                </VBox.margin>
             </Label>
-            <ProgressBar id="feedingBar" prefHeight="20.0" prefWidth="220.0" progress="0.0">
+            <ProgressBar id="feedingBar" fx:id="feedingBar" prefHeight="20.0" prefWidth="220.0" progress="0.0">
                <VBox.margin>
                   <Insets left="10.0" />
                </VBox.margin>
@@ -46,7 +46,7 @@
                   <Insets left="40.0" top="20.0" />
                </VBox.margin>
             </Label>
-            <ProgressBar id="funBar" prefHeight="20.0" prefWidth="220.0" progress="0.0">
+            <ProgressBar id="funBar" fx:id="funBar" prefHeight="20.0" prefWidth="220.0" progress="0.0">
                <VBox.margin>
                   <Insets left="10.0" />
                </VBox.margin>
@@ -59,7 +59,7 @@
                   <Insets />
                </BorderPane.margin>
             </Label>
-            <TextField id="ageField" alignment="CENTER" editable="false" prefHeight="26.0" prefWidth="36.0" />
+            <TextField id="ageField" fx:id="ageProperty" alignment="CENTER" editable="false" prefHeight="26.0" prefWidth="36.0" />
          </children>
       </VBox>
    </right>
