@@ -24,6 +24,7 @@
         <items>
           <Button mnemonicParsing="false" prefHeight="26.0" prefWidth="81.0" text="Feed" />
             <Button mnemonicParsing="false" prefHeight="26.0" prefWidth="173.0" text="Play with Tamagotchi" />
+            <Button mnemonicParsing="false" onAction="#saveGame" prefHeight="26.0" prefWidth="109.0" text="Save Game" />
         </items>
       </ToolBar>
    </bottom>
