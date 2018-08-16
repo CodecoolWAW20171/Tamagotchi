@@ -6,6 +6,7 @@ import org.junit.Test;
 public class testTamagotchi {
 
     Tamagotchi tamagotchi;
+
     @Before
     public void initialize() {
         this.tamagotchi = new Tamagotchi();
