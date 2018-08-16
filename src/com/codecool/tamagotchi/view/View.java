@@ -36,13 +36,8 @@ public class View {
         ProgressBar funBar = (ProgressBar) root.lookup(funBarSelector);
         TextField ageField = (TextField) root.lookup(ageFieldSelector);
 
-        ObservableValue<Integer> observableFeeding = new SimpleIntegerProperty(tamagotchi.getFeeding()).asObject();
-        feedingBar.progressProperty().bindBidirectional((Property) observableFeeding);
-
-        ObservableValue<Integer> observableFun = new SimpleIntegerProperty(tamagotchi.getFun()).asObject();
-        funBar.progressProperty().bindBidirectional((Property) observableFun);
-
-        ObservableValue<Integer> observableAge = new SimpleIntegerProperty(tamagotchi.getAge()).asObject();
-        ageField.textProperty().bindBidirectional((Property) observableAge, new NumberStringConverter());
+        feedingBar.progressProperty().bindBidirectional(tamagotchi.getFeeding());
+        funBar.progressProperty().bindBidirectional(tamagotchi.getFun());
+        ageField.textProperty().bindBidirectional(tamagotchi.getAge(), new NumberStringConverter());
     }
 }
