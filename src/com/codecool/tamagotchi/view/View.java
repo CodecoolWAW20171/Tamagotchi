@@ -15,6 +15,10 @@ import javafx.util.converter.NumberStringConverter;
 
 public class View {
 
+    private String feedingBarSelector = "#feedingBar";
+    private String funBarSelector = "#funBar";
+    private String ageFieldSelector = "#ageField";
+
     public void showTamagotchi(ImageView imageView) {
         try {
             Image image = new Image("tamagotchi.png");
@@ -28,9 +32,9 @@ public class View {
 
 
     public void setUpBindings(Tamagotchi tamagotchi, Parent root) {
-        ProgressBar feedingBar = (ProgressBar) root.lookup("#feedingBar");
-        ProgressBar funBar = (ProgressBar) root.lookup("#funBar");
-        TextField ageField = (TextField) root.lookup("#ageField");
+        ProgressBar feedingBar = (ProgressBar) root.lookup(feedingBarSelector);
+        ProgressBar funBar = (ProgressBar) root.lookup(funBarSelector);
+        TextField ageField = (TextField) root.lookup(ageFieldSelector);
 
         ObservableValue<Integer> observableFeeding = new SimpleIntegerProperty(tamagotchi.getFeeding()).asObject();
         feedingBar.progressProperty().bindBidirectional((Property) observableFeeding);
