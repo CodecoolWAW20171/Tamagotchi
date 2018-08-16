@@ -43,7 +43,7 @@ public class GameController {
 
             ScheduledExecutorService executor = Executors.newScheduledThreadPool(2);
             executor.scheduleAtFixedRate(new GenerateNeedsRunnable(this.tamagotchi), 0, 2, TimeUnit.SECONDS);
-            executor.scheduleAtFixedRate(new GetOlderRunnable(this.tamagotchi), 1, 1, TimeUnit.MINUTES);
+            executor.scheduleAtFixedRate(new GetOlderRunnable(this.tamagotchi), 1, 1, TimeUnit.SECONDS);
 
             this.primaryStage.setScene(new Scene(root, MainMenuController.WINDOW_WIDTH, MainMenuController.WINDOW_HEIGHT));
             this.primaryStage.show();

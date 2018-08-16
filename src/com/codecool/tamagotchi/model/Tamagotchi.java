@@ -36,7 +36,7 @@ public class Tamagotchi {
         }
     }
 
-    public synchronized void getOlder() { this.Age.setValue(this.Age.getValue() - 1); }
+    public synchronized void getOlder() { this.Age.setValue(this.Age.getValue() + 1); }
 
     public IntegerProperty getFeeding() {
         return this.Feeding;
