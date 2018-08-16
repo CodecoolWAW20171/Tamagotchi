@@ -17,15 +17,17 @@ public class Tamagotchi {
 
     }
 
-    public void feed() {
+    public synchronized void feed() {
         this.Feeding = 100;
     }
 
-    public void decreaseFeeding() {
+    public synchronized void decreaseFeeding() {
         this.Feeding -= 1;
     }
 
-    public void haveFun() {
+    public synchronized void decreaseFun() { this.Fun -= 1; }
+
+    public synchronized void haveFun() {
         if (this.Fun < 80) {
             this.Fun += 20;
         } else {
@@ -33,7 +35,7 @@ public class Tamagotchi {
         }
     }
 
-    public void getOlder() {
+    public synchronized void getOlder() {
         this.Age += 1;
     }
 
