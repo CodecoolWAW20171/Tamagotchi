@@ -2,11 +2,11 @@ package com.codecool.tamagotchi.controller;
 
 import com.codecool.tamagotchi.model.Tamagotchi;
 
-public class generateNeedsRunnable implements Runnable {
+public class GenerateNeedsRunnable implements Runnable {
 
     private Tamagotchi tamagotchi;
 
-    public generateNeedsRunnable(Tamagotchi tamagotchi) {
+    public GenerateNeedsRunnable(Tamagotchi tamagotchi) {
         this.tamagotchi = tamagotchi;
     }
 

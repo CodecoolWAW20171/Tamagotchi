@@ -2,11 +2,11 @@ package com.codecool.tamagotchi.controller;
 
 import com.codecool.tamagotchi.model.Tamagotchi;
 
-public class getOlderRunnable implements Runnable {
+public class GetOlderRunnable implements Runnable {
 
     private Tamagotchi tamagotchi;
 
-    public getOlderRunnable(Tamagotchi tamagotchi) {
+    public GetOlderRunnable(Tamagotchi tamagotchi) {
         this.tamagotchi = tamagotchi;
     }
 

@@ -11,6 +11,9 @@ import javafx.scene.image.ImageView;
 import javafx.stage.Stage;
 
 import java.io.IOException;
+import java.util.concurrent.Executors;
+import java.util.concurrent.ScheduledExecutorService;
+import java.util.concurrent.TimeUnit;
 
 public class GameController {
 
@@ -36,7 +39,11 @@ public class GameController {
 
             View view = new View();
             view.showTamagotchi(tamagotchiPicture);
-            view.setUpBindings(tamagotchi, root);
+            view.setUpBindings(this.tamagotchi, root);
+
+            ScheduledExecutorService executor = Executors.newScheduledThreadPool(2);
+            executor.scheduleAtFixedRate(new GenerateNeedsRunnable(this.tamagotchi), 0, 2, TimeUnit.SECONDS);
+            executor.scheduleAtFixedRate(new GetOlderRunnable(this.tamagotchi), 0, 1, TimeUnit.MINUTES);
 
             this.primaryStage.setScene(new Scene(root, MainMenuController.WINDOW_WIDTH, MainMenuController.WINDOW_HEIGHT));
             this.primaryStage.show();

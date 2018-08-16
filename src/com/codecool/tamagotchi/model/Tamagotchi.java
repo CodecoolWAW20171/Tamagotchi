@@ -1,5 +1,7 @@
 package com.codecool.tamagotchi.model;
 
+import javafx.collections.FXCollections;
+
 public class Tamagotchi {
     private int Feeding;
     private int Fun;
@@ -19,11 +21,10 @@ public class Tamagotchi {
         this.Feeding = 100;
     }
 
-    public synchronized void decreaseFeeding() {
-        this.Feeding -= 1;
+    public synchronized void decreaseFeeding() { this.Feeding -= 1;
     }
 
-    public synchronized void decreaseFun() { this.Fun -= 1; }
+    public synchronized void decreaseFun() { this.Fun -= 1;}
 
     public synchronized void haveFun() {
         if (this.Fun < 80) {
