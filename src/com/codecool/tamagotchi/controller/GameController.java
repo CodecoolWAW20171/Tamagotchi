@@ -61,10 +61,6 @@ public class GameController {
         this.tamagotchi.haveFun();
     }
 
-    public void loadGame(String filename) {
-
-    }
-
     public void saveGame() {
 
     }

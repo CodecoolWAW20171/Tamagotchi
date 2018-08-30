@@ -24,11 +24,6 @@ public class MainMenuController {
     @FXML
     private Button startLoadedGame;
 
-    private GameController gameController;
-
-    public void setGameController(GameController gameController) {
-        this.gameController = gameController;
-    }
 
     public MainMenuController(Stage primaryStage) {
         this.primaryStage = primaryStage;
@@ -62,7 +57,9 @@ public class MainMenuController {
 
     @FXML
     private void continueSavedGame() {
-        gameController.loadGame(FILENAME);
+        Tamagotchi tamagotchi = new Tamagotchi(FILENAME);
+        GameController gameController = new GameController(this.primaryStage, tamagotchi);
+        gameController.initializeGame();
     }
 
 }
