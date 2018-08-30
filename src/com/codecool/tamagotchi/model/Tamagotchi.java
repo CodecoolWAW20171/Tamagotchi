@@ -1,16 +1,16 @@
 package com.codecool.tamagotchi.model;
 
-import javafx.beans.property.IntegerProperty;
-import javafx.beans.property.SimpleIntegerProperty;
+import javafx.beans.property.DoubleProperty;
+import javafx.beans.property.SimpleDoubleProperty;
 
 public class Tamagotchi {
-    private IntegerProperty Feeding = new SimpleIntegerProperty();
-    private IntegerProperty Fun = new SimpleIntegerProperty();
-    private IntegerProperty Age = new SimpleIntegerProperty();
+    private DoubleProperty Feeding = new SimpleDoubleProperty();
+    private DoubleProperty Fun = new SimpleDoubleProperty();
+    private DoubleProperty Age = new SimpleDoubleProperty();
 
     public Tamagotchi() {
-        Feeding.setValue(100);
-        Fun.setValue(100);
+        Feeding.setValue(1.0);
+        Fun.setValue(1.0);
         Age.setValue(0);
     }
 
@@ -19,34 +19,34 @@ public class Tamagotchi {
     }
 
     public synchronized void feed() {
-        this.Feeding.setValue(100);
+        this.Feeding.setValue(1.0);
     }
 
     public synchronized void decreaseFeeding() {
-        this.Feeding.setValue(this.Feeding.getValue() - 1);
+        this.Feeding.setValue(this.Feeding.getValue() - 0.01);
     }
 
-    public synchronized void decreaseFun() { this.Fun.setValue(this.Fun.getValue() - 1); }
+    public synchronized void decreaseFun() { this.Fun.setValue(this.Fun.getValue() - 0.01); }
 
     public synchronized void haveFun() {
-        if (this.Fun.getValue() < 80) {
-            this.Fun.setValue(this.Fun.getValue() + 20);
+        if (this.Fun.getValue() < 0.8) {
+            this.Fun.setValue(this.Fun.getValue() + 0.2);
         } else {
-            this.Fun.setValue(100);
+            this.Fun.setValue(1.0);
         }
     }
 
     public synchronized void getOlder() { this.Age.setValue(this.Age.getValue() + 1); }
 
-    public IntegerProperty getFeeding() {
+    public DoubleProperty getFeeding() {
         return this.Feeding;
     }
 
-    public IntegerProperty getFun() {
+    public DoubleProperty getFun() {
         return this.Fun;
     }
 
-    public IntegerProperty getAge() {
+    public DoubleProperty getAge() {
         return this.Age;
     }
 
