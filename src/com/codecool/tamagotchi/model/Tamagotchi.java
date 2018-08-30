@@ -1,5 +1,6 @@
 package com.codecool.tamagotchi.model;
 
+import javafx.application.Platform;
 import javafx.beans.property.DoubleProperty;
 import javafx.beans.property.SimpleDoubleProperty;
 
@@ -24,9 +25,17 @@ public class Tamagotchi {
 
     public synchronized void decreaseFeeding() {
         this.Feeding.setValue(this.Feeding.getValue() - 0.01);
+        if (this.Feeding.getValue() <= 0.0) {
+            Platform.exit();
+        }
     }
 
-    public synchronized void decreaseFun() { this.Fun.setValue(this.Fun.getValue() - 0.01); }
+    public synchronized void decreaseFun() {
+        this.Fun.setValue(this.Fun.getValue() - 0.01);
+        if (this.Feeding.getValue() <= 0.0) {
+            Platform.exit();
+        }
+    }
 
     public synchronized void haveFun() {
         if (this.Fun.getValue() < 0.8) {
@@ -36,17 +45,19 @@ public class Tamagotchi {
         }
     }
 
-    public synchronized void getOlder() { this.Age.setValue(this.Age.getValue() + 1); }
+    public synchronized void getOlder() {
+        this.Age.setValue(this.Age.getValue() + 1);
+    }
 
-    public DoubleProperty getFeeding() {
+    public synchronized DoubleProperty getFeeding() {
         return this.Feeding;
     }
 
-    public DoubleProperty getFun() {
+    public synchronized DoubleProperty getFun() {
         return this.Fun;
     }
 
-    public DoubleProperty getAge() {
+    public synchronized DoubleProperty getAge() {
         return this.Age;
     }
 

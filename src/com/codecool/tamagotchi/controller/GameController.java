@@ -53,6 +53,14 @@ public class GameController {
         }
     }
 
+    public void feed() {
+        this.tamagotchi.feed();
+    }
+
+    public void haveFun() {
+        this.tamagotchi.haveFun();
+    }
+
     public void loadGame(String filename) {
 
     }
