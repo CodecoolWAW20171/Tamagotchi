@@ -10,6 +10,8 @@ import javafx.scene.Scene;
 import javafx.scene.image.ImageView;
 import javafx.stage.Stage;
 
+import java.io.BufferedWriter;
+import java.io.FileWriter;
 import java.io.IOException;
 import java.util.concurrent.Executors;
 import java.util.concurrent.ScheduledExecutorService;
@@ -18,8 +20,8 @@ import java.util.concurrent.TimeUnit;
 public class GameController {
 
     public static final String GameFXML = "../view/Game.fxml";
-    Tamagotchi tamagotchi;
-    Stage primaryStage;
+    private Tamagotchi tamagotchi;
+    private Stage primaryStage;
 
 
     public GameController(Stage primaryStage, Tamagotchi tamagotchi) {
@@ -62,6 +64,15 @@ public class GameController {
     }
 
     public void saveGame() {
+        try {
+            String str = "Hello";
+            BufferedWriter writer = new BufferedWriter(new FileWriter(fileName));
+            writer.write(str);
 
+            writer.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+            Platform.exit();
+        }
     }
 }
