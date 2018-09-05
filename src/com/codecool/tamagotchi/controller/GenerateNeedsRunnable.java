@@ -10,7 +10,7 @@ public class GenerateNeedsRunnable implements Runnable {
         this.tamagotchi = tamagotchi;
     }
 
-    public void run() {
+    public synchronized void run() {
         this.tamagotchi.decreaseFeeding();
         this.tamagotchi.decreaseFun();
     }
