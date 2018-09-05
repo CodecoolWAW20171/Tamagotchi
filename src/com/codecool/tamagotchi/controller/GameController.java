@@ -12,7 +12,6 @@ import javafx.scene.image.ImageView;
 import javafx.stage.Stage;
 
 import java.io.BufferedWriter;
-import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.concurrent.Executors;
