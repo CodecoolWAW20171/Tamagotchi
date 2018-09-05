@@ -25,7 +25,7 @@ public class Tamagotchi {
             this.Feeding.setValue(Double.parseDouble(reader.readLine()));
             this.Fun.setValue(Double.parseDouble(reader.readLine()));
             this.Age.setValue(Double.parseDouble(reader.readLine()));
-        }  catch (IOException e) {
+        } catch (IOException e) {
             e.printStackTrace();
             Platform.exit();
         }
