@@ -1,5 +1,6 @@
 package com.codecool.tamagotchi.controller;
 
+import com.codecool.tamagotchi.Utility;
 import com.codecool.tamagotchi.model.Tamagotchi;
 import com.codecool.tamagotchi.view.View;
 import javafx.application.Platform;
@@ -11,6 +12,7 @@ import javafx.scene.image.ImageView;
 import javafx.stage.Stage;
 
 import java.io.BufferedWriter;
+import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.concurrent.Executors;
@@ -18,8 +20,6 @@ import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.TimeUnit;
 
 public class GameController {
-
-    public static final String GameFXML = "../view/Game.fxml";
     private Tamagotchi tamagotchi;
     private Stage primaryStage;
 
@@ -34,7 +34,7 @@ public class GameController {
         try {
             this.primaryStage.hide();
 
-            FXMLLoader GameLoader = new FXMLLoader(getClass().getResource(this.GameFXML));
+            FXMLLoader GameLoader = new FXMLLoader(getClass().getResource(Utility.GameFXML));
             GameLoader.setController(this);
             Parent root = GameLoader.load();
             ImageView tamagotchiPicture = (ImageView) root.lookup("#tamagotchiPicture");
@@ -47,7 +47,7 @@ public class GameController {
             executor.scheduleAtFixedRate(new GenerateNeedsRunnable(this.tamagotchi), 0, 2, TimeUnit.SECONDS);
             executor.scheduleAtFixedRate(new GetOlderRunnable(this.tamagotchi), 1, 1, TimeUnit.SECONDS);
 
-            this.primaryStage.setScene(new Scene(root, MainMenuController.WINDOW_WIDTH, MainMenuController.WINDOW_HEIGHT));
+            this.primaryStage.setScene(new Scene(root, Utility.WINDOW_WIDTH, Utility.WINDOW_HEIGHT));
             this.primaryStage.show();
         } catch (IOException e) {
             e.printStackTrace();
@@ -65,10 +65,12 @@ public class GameController {
 
     public void saveGame() {
         try {
-            String str = "Hello";
-            BufferedWriter writer = new BufferedWriter(new FileWriter(fileName));
-            writer.write(str);
-
+            BufferedWriter writer = new BufferedWriter(new FileWriter(Utility.saveFile));
+            writer.write(tamagotchi.getFeeding().getValue().toString());
+            writer.newLine();
+            writer.write(tamagotchi.getFun().getValue().toString());
+            writer.newLine();
+            writer.write(tamagotchi.getAge().getValue().toString());
             writer.close();
         } catch (IOException e) {
             e.printStackTrace();

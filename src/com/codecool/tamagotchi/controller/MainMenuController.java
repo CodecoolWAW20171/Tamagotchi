@@ -1,5 +1,6 @@
 package com.codecool.tamagotchi.controller;
 
+import com.codecool.tamagotchi.Utility;
 import com.codecool.tamagotchi.model.Tamagotchi;
 import javafx.application.Platform;
 import javafx.fxml.FXML;
@@ -12,11 +13,6 @@ import javafx.stage.Stage;
 import java.io.IOException;
 
 public class MainMenuController {
-
-    public static final double WINDOW_WIDTH = 1200;
-    public static final double WINDOW_HEIGHT = 700;
-    public static final String MenuFXML = "../view/MainMenu.fxml";
-    public static final String FILENAME = "@/saveFile.txt";
     private Stage primaryStage;
 
     @FXML
@@ -34,11 +30,11 @@ public class MainMenuController {
         try {
             this.primaryStage.hide();
 
-            FXMLLoader mainMenuLoader = new FXMLLoader(getClass().getResource(this.MenuFXML));
+            FXMLLoader mainMenuLoader = new FXMLLoader(getClass().getResource(Utility.MenuFXML));
             mainMenuLoader.setController(this);
             Parent root = mainMenuLoader.load();
 
-            this.primaryStage.setScene(new Scene(root, MainMenuController.WINDOW_WIDTH, MainMenuController.WINDOW_HEIGHT));
+            this.primaryStage.setScene(new Scene(root, Utility.WINDOW_WIDTH, Utility.WINDOW_HEIGHT));
             this.primaryStage.show();
 
         } catch (IOException e) {
@@ -57,7 +53,7 @@ public class MainMenuController {
 
     @FXML
     private void continueSavedGame() {
-        Tamagotchi tamagotchi = new Tamagotchi(FILENAME);
+        Tamagotchi tamagotchi = new Tamagotchi(Utility.saveFile);
         GameController gameController = new GameController(this.primaryStage, tamagotchi);
         gameController.initializeGame();
     }

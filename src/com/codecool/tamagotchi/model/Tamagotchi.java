@@ -4,6 +4,10 @@ import javafx.application.Platform;
 import javafx.beans.property.DoubleProperty;
 import javafx.beans.property.SimpleDoubleProperty;
 
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.IOException;
+
 public class Tamagotchi {
     private DoubleProperty Feeding = new SimpleDoubleProperty();
     private DoubleProperty Fun = new SimpleDoubleProperty();
@@ -16,7 +20,15 @@ public class Tamagotchi {
     }
 
     public Tamagotchi(String filename) {
-
+        try {
+            BufferedReader reader = new BufferedReader(new FileReader(filename));
+            this.Feeding.setValue(Double.parseDouble(reader.readLine()));
+            this.Fun.setValue(Double.parseDouble(reader.readLine()));
+            this.Age.setValue(Double.parseDouble(reader.readLine()));
+        }  catch (IOException e) {
+            e.printStackTrace();
+            Platform.exit();
+        }
     }
 
     public synchronized void feed() {
